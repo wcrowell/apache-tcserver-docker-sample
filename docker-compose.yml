@@ -6,6 +6,8 @@ services:
     build: ./docker/httpd
     ports:
       - "80:80"
+    depends_on:
+      - tomcat
   tomcat:
     container_name: tomcat-container
     build: ./docker/tomcat
