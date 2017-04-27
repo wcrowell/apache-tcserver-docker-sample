@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  httpd:
+    container_name: httpd-container
+    build: ./docker/httpd
+    ports:
+      - "80:80"
+  tomcat:
+    container_name: tomcat-container
+    build: ./docker/tomcat
+    volumes:
+      - ./manager.war:/web/tcserver/01/webapps/manager.war
+      - ./logging.properties:/web/tcserver/01/conf/logging.properties
+    expose:
+      - "8009"
