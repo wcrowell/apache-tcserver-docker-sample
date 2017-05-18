@@ -14,5 +14,6 @@ services:
     volumes:
       - ./manager.war:/web/tcserver/01/webapps/manager.war
       - ./logging.properties:/web/tcserver/01/conf/logging.properties
+      - ./tomcat-logs:/web/tcserver/01/logs
     expose:
       - "8009"
